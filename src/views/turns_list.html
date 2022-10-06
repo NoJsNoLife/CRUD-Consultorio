@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Turnos</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container p-4">
+        <br>
+            <h1>Agenda de Turnos</h1>
+        <br>
+        <section>  
+            <div class="row justify-content-around">
+                <button class="btn btn-success col m-4" id="new">Nuevo Turno</button>
+                <button class="btn btn-secondary col m-4"  id="reload">Actualizar</button>
+                <button class="btn btn-dark col m-4" id="back">Volver</button>
+                <table id="turns_list" class="table table-hover table-responsive">
+                </table>
+            </div>
+        </section>
+    </div>
+    <style>
+        
+    </style>
+    <script src="../ui/turns_list.js"></script>
+</body>
+</html>

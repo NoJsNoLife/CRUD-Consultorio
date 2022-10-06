@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <title>Consultorio-app</title>
+</head>
+<body>
+    
+    <div  id="intro" class="Container" role="group" aria-label="Btn Group">
+        <div class="d-flex justify-content-around aling-items-center p-4 h-100">
+            <div class="justify-content aling-items-center p-4">
+                <h1>Consultorio App</h1>
+                <h2></h2>
+            </div>
+            
+            <div class="btn-group-vertical p-5 m-4">
+                <button type="button" id="new_turn" class="btn btn-secondary m-2 p-3 rounded-0">Nuevo Turno</button>
+                <button type="button" id="new_client" class="btn btn-secondary m-2 p-3 rounded-0">Nuevo Paciente</button>
+                <button type="button" id="show_turns" class="btn btn-secondary m-2 p-3 rounded-0">Mostrar Turnos</button>
+                <button type="button" id="show_clients" class="btn btn-secondary m-2 p-3 rounded-0">Mostrar Pacientes</button>
+                <button type="button" id="close" class="btn btn-secondary m-2 p-3 rounded-0">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        #intro {
+            background-image: url("./images/fondo.jpg");
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+            color: white;
+            text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+        }
+    </style>
+    <script src="../ui/index.js"></script>
+</body>
+</html>
