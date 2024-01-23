@@ -21,7 +21,8 @@ if(process.env.NODE_ENV !== 'production'){
 function createIndexWindow(){
     index = new BrowserWindow({
         width: 1080,
-        height: 1080,
+        height: 920,
+        resizable: false,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,

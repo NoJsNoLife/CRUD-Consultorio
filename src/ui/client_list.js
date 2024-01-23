@@ -15,13 +15,7 @@ window.api.receive('clients:get', Clients => {
 });
 
 function insertClient(client){
-    const clientTemplate = `
-                <tr>
-                    <th>Nombre</th>
-                    <th>Dni</th>
-                    <th>Teléfono</th>
-                    <th>Opciones</th>   
-                </tr>	
+    const clientTemplate = `                	
                 <tr>
                     <td>${client.name}</td>
                     <td>${client.dni}</td>
