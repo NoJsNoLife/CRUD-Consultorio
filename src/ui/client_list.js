@@ -16,7 +16,7 @@ window.api.receive('clients:get', Clients => {
 
 function insertClient(client){
     const clientTemplate = `                	
-                <tr>
+                <tr id='${client._id}'>
                     <td>${client.name}</td>
                     <td>${client.dni}</td>
                     <td>${client.phone}</td>
@@ -42,6 +42,8 @@ reloadBtn.addEventListener('click', () => {
 function deleteClient(clientId){
     window.api.send('client:delete', clientId);
     window.api.receive('delete_client_success', (res => {
+        const deletedClient =  document.getElementById(clientId)
+        deletedClient.style.display = 'none'
 
     }))
     window.api.receive('delete_client_error', (res => {
