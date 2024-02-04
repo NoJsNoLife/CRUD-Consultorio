@@ -1,5 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta from electron -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+
+    <title>Consultorio-app</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/css/normalize.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/clients_list.css">
+</head>
+
+<body class="index-container">
+    <header class="navbar-container">
+        <div class="navbar-wrapper">
+            <h1 class="main-title">CONSULTORIO</h1>
+
+            <nav class="main-navbar">
+                <ul class="navbar-list">
+                    <li><a href="#" id="new_client">Nuevo Paciente</a></li>
+                    <li><a href="#" id="show_clients" class="active">Mostrar Pacientes</a></li>
+                    <li><a href="#" id="new_turn">Nuevo Turno</a></li>
+                    <li><a href="#" id="show_turns">Mostrar Turnos</a></li>
+                    <li><a href="#" id="close">Cerrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="main-content">
+            <h2 class="section-title">Pacientes</h2>
+            <hr>
+
+            <div class="list-options">
+                <a class="btn-reload" id="reload">
+                    <img src="../../public/images/icon-reload.png" alt="Icon reload" class="img-reload">
+                </a>
+
+                <div class="input-group input-paciente">
+                    <input type="text" class="form-control" placeholder="Buscar Paciente" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+            <article class="table-scroll">
+                <table class="table table-hover table-striped text-center">
+                    <thead class="table-head">
+                        <tr class="text-uppercase">
+                            <th scope="col" class="col-5">Nombre</th>
+                            <th scope="col" class="col-2">Dni</th>
+                            <th scope="col" class="col-2">Teléfono</th>
+                            <th scope="col" class="col-3">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clients_list">
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section class="info-content">
+            <span id="clock"></span>
+        </section>
+    </main>
+
+    <script src="../ui/client_list.js"></script>
+    <script src="../ui/index.js"></script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,9 +108,7 @@
             </div>
         </section>
     </div>
-    <style>
-        
-    </style>
+    
     <script src="../ui/client_list.js"></script>
 </body>
-</html>
+</html> -->

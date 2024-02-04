@@ -1,6 +1,4 @@
 const clients_list = document.querySelector('#clients_list')
-const backBtn = document.querySelector('#back')
-const newBtn = document.querySelector('#new')
 const reloadBtn = document.querySelector('#reload')
 
 window.api.send('clients:get');
@@ -17,10 +15,10 @@ window.api.receive('clients:get', Clients => {
 function insertClient(client){
     const clientTemplate = `                	
                 <tr id='${client._id}'>
-                    <td>${client.name}</td>
-                    <td>${client.dni}</td>
-                    <td>${client.phone}</td>
-                    <td>
+                    <td class="col-5">${client.name} ${client.lastname}</td>
+                    <td class="col-2">${client.dni}</td>
+                    <td class="col-2">${client.phone}</td>
+                    <td class="col-3">
                         <button id="view" onClick="viewClient('${client._id}')" class="btn btn-info">Ver</button>
                         <button id="delete" onClick="deleteClient('${client._id}')" class="btn btn-danger">Eliminar</button>
                     </td>
@@ -29,12 +27,6 @@ function insertClient(client){
     clients_list.insertAdjacentHTML('beforeend', clientTemplate);
 };
 
-backBtn.addEventListener('click', () => {
-    window.api.send('back')
-})
-newBtn.addEventListener('click', () => {
-    window.api.send('client:page')
-})
 reloadBtn.addEventListener('click', () => {
     window.location.reload()
 })

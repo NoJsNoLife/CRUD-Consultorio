@@ -1,0 +1,97 @@
+:root {  
+  --logo: #B3428A;
+  --menu: #FF69B4;
+  --menuHover: #FFA3D4;
+  --info: #D32C6D;
+}
+
+/**
+  MENU --------------------------
+*/
+.index-container {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.navbar-container {
+  display: flex;
+  max-width: 300px;
+  border-right: 1px solid white;
+}
+
+.navbar-wrapper {
+  background-color: var(--menu);  
+}
+
+.main-title {
+  background-color: var(--logo);
+  padding: 20px;
+  margin: 0;
+  border-bottom: 1px solid white;
+}
+
+.navbar-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar-list>li>a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 20px;
+  font-size: 22px;
+  transition-property: transform;
+  transition-timing-function: ease;
+  transition-duration: 0.1s;
+}
+
+.navbar-list>li>a:hover {
+  background-color: var(--menuHover);
+  color: black;
+}
+
+/**
+  CONTENT --------------------------
+*/
+.main-container {
+  background-color: white;
+  color: black;
+  /* background-color: #FFA3D4; */
+  /* background-image: url("../../public/images/fondo.jpg");
+  background-size: cover;
+  background-position: center; */
+  margin: 0;  
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 95;
+  padding: 20px;
+}
+
+.info-content {
+  background-color: var(--info);
+  color: white;
+  flex: 5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  border-top: 1px solid white;
+}
+
+.section-title {
+  padding: 0;
+}
+
+#clock {
+  font-size: 22px;  
+}
