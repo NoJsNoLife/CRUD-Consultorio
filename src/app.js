@@ -1,4 +1,4 @@
-const {  BrowserWindow, ipcMain, app, Notification } = require('electron');
+const { BrowserWindow, ipcMain, app, Notification } = require('electron');
 const path = require('path');
 const Client = require('./models/Client');
 const Turn = require('./models/Turn')
@@ -8,20 +8,19 @@ let newClient;
 let newTurn;
 
 // -----REINICIA LA APLICACION EN CADA CAMBIO PRODUCIDO EN EL CODIGO FUNCIONAL-----
-if(process.env.NODE_ENV !== 'production'){
+if (process.env.NODE_ENV !== 'production') {
     require('electron-reload')(__dirname, {
         electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
     });
 }
 
-
-// -----INDEX-----
-
-
-function createIndexWindow(){
+/**
+ * Crea una nueva ventana principal
+ */
+function createIndexWindow() {
     index = new BrowserWindow({
-        width: 1080,
-        height: 920,
+        width: 1280,
+        height: 720,
         resizable: false,
         webPreferences: {
             nodeIntegration: false,
@@ -32,17 +31,14 @@ function createIndexWindow(){
     })
 
     index.loadFile('src/views/index.html');
-
-    index.on('closed', () => {
-        app.quit()
-    });
+    index.on('closed', () => app.quit());
 }
 
 
 //-----NEW CLIENT-----
 
 
-function createNewClientWindow(){
+function createNewClientWindow() {
     newClient = new BrowserWindow({
         width: 800,
         height: 800,
@@ -65,7 +61,7 @@ function createNewClientWindow(){
 //-----NEW TURN-----
 
 
-function createNewTurnWindow(){
+function createNewTurnWindow() {
     newTurn = new BrowserWindow({
         width: 500,
         height: 500,
@@ -95,7 +91,7 @@ ipcMain.on('clients:list', (event, args) => {
     index.loadFile('src/views/clients_list.html')
 });
 ipcMain.on('client:new', async (event, args) => {
-    try{
+    try {
         const newClient = new Client(args);
         await newClient.save()
         event.reply('new_client_created', new Notification({
@@ -104,7 +100,7 @@ ipcMain.on('client:new', async (event, args) => {
         }).show()
         )
 
-    } catch(e){
+    } catch (e) {
         console.error(e)
         event.reply('new_client_error', new Notification({
             title: 'ERROR',
@@ -114,14 +110,14 @@ ipcMain.on('client:new', async (event, args) => {
     }
 });
 ipcMain.on('client:delete', async (event, args) => {
-    try{
+    try {
         await Client.findByIdAndDelete(args)
         event.reply('delete_client_success', new Notification({
-            title: 'ÉXITO',
+            title: 'ÉXITO 👍',
             body: 'Se ha eliminado el cliente'
         }).show()
         )
-    } catch(e) {
+    } catch (e) {
         console.log(e)
         event.reply('delete_client_error', new Notification({
             title: 'ERROR',
@@ -146,7 +142,7 @@ ipcMain.on('turns:list', (event, args) => {
     index.loadFile('src/views/turns_list.html')
 });
 ipcMain.on('turn:new', async (event, args) => {
-    try{
+    try {
         const newTurn = new Turn(args);
         await newTurn.save()
         event.reply('new_turn_created', new Notification({
@@ -155,7 +151,7 @@ ipcMain.on('turn:new', async (event, args) => {
         }).show()
         )
 
-    } catch(e){
+    } catch (e) {
         console.error(e)
         event.reply('new_turn_error', new Notification({
             title: 'ERROR',
@@ -165,14 +161,14 @@ ipcMain.on('turn:new', async (event, args) => {
     }
 });
 ipcMain.on('turn:delete', async (event, args) => {
-    try{
+    try {
         await Turn.findByIdAndDelete(args)
         event.reply('delete_turn_success', new Notification({
             title: 'ÉXITO',
             body: 'Se ha eliminado el turno'
         }).show()
         )
-    } catch(e) {
+    } catch (e) {
         console.log(e)
         event.reply('delete_turn_error', new Notification({
             title: 'ERROR',

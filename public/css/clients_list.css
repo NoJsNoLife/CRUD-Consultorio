@@ -1,0 +1,70 @@
+.navbar-list>li>a.active {
+  background-color: #FFA3D4;
+  color: black;
+}
+
+/**
+  OPTIONS ----------------------------
+*/
+.list-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 30px;
+}
+
+.btn-reload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;  
+  cursor: pointer;  
+}
+
+.btn-reload:hover {
+  background-color: rgba(100, 100, 100, 0.25);
+  color: white;
+}
+
+.btn-reload:hover > .img-reload {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.img-reload {
+  width: 25px;
+  height: 25px;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.input-paciente {
+  margin-left: 10px;
+}
+
+/**
+  TABLES ----------------------------
+*/
+.table-head {
+  background-color: #B3428A;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table-custom>tbody>tr:nth-child(odd) {
+  background-color: #FFCCEB;
+}
+
+.table-custom>tbody>tr:nth-child(even) {
+  background-color: #FFB8E6;
+}
+
+.table-scroll {
+  max-height: 430px;
+  overflow-y: auto;
+}

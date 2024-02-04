@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <!-- Meta from electron -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+
     <title>Consultorio-app</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/css/normalize.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="stylesheet" href="../../public/css/index.css">
 </head>
-<body>
-    
-    <div  id="intro" class="Container" role="group" aria-label="Btn Group">
-        <div class="d-flex justify-content-around aling-items-center p-4 h-100">
-            <div class="justify-content aling-items-center p-4">
-                <h1>Consultorio App</h1>
-                <h2></h2>
-            </div>
-            
-            <div class="btn-group-vertical p-5 m-4">
-                <button type="button" id="new_turn" class="btn btn-secondary m-2 p-3 rounded-0">Nuevo Turno</button>
-                <button type="button" id="new_client" class="btn btn-secondary m-2 p-3 rounded-0">Nuevo Paciente</button>
-                <button type="button" id="show_turns" class="btn btn-secondary m-2 p-3 rounded-0">Mostrar Turnos</button>
-                <button type="button" id="show_clients" class="btn btn-secondary m-2 p-3 rounded-0">Mostrar Pacientes</button>
-                <button type="button" id="close" class="btn btn-secondary m-2 p-3 rounded-0">Cerrar</button>
-            </div>
+
+<body class="index-container">
+    <header class="navbar-container">
+        <div class="navbar-wrapper">
+            <h1 class="main-title">CONSULTORIO</h1>
+
+            <nav class="main-navbar">
+                <ul class="navbar-list">
+                    <li><a href="#" id="new_client">Nuevo Paciente</a></li>
+                    <li><a href="#" id="show_clients">Mostrar Pacientes</a></li>
+                    <li><a href="#" id="new_turn"><span>Nuevo Turno</span></a></li>
+                    <li><a href="#" id="show_turns">Mostrar Turnos</a></li>                    
+                    <li><a href="#" id="close">Cerrar</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-    
-    <style>
-        #intro {
-            background-image: url("./images/fondo.jpg");
-            background-size: cover;
-            min-height: 100vh;
-            position: relative;
-            color: white;
-            text-shadow: 2px 2px 2px rgba(0,0,0,.2);
-        }
-    </style>
+    </header>
+
+    <main class="main-container">
+        <section class="main-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, est aliquam et natus voluptatibus voluptatum, repellat earum perferendis iure tenetur officiis quos, ipsam incidunt modi velit dolor? Ducimus, commodi quam!
+        </section>
+
+        <section class="info-content">
+            <span id="clock"></span>
+        </section>        
+    </main>
+
     <script src="../ui/index.js"></script>
 </body>
+
 </html>
