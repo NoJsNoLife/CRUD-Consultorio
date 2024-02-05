@@ -1,33 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-    <title>Nuevo Turno</title>
-</head>
-<body>
-    <div class="container p-4">
-        <form class="p-4">
-            <div class="form group">
-                <input type="text" id="name" class="form-control" placeholder="Nombre" autofocus required="required" pattern="[A-Za-z].{1,}" title="Solo pueden ingresarse letras y un mínimo de 8 carácteres">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Meta from electron -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+    
+        <title>Consultorio-app</title>
+        <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../public/css/normalize.css">
+        <link rel="stylesheet" href="../../public/css/styles.css">
+        <link rel="stylesheet" href="../../public/css/index.css">
+    </head>
+    
+    <body class="index-container">
+        <header class="navbar-container">
+            <div class="navbar-wrapper">
+                <h1 class="main-title">CONSULTORIO</h1>
+    
+                <nav class="main-navbar">
+                    <ul class="navbar-list">
+                        <li><a href="#" id="new_client">Nuevo Paciente</a></li>
+                        <li><a href="#" id="show_clients">Mostrar Pacientes</a></li>
+                        <li><a href="#" id="new_turn" class="active">Nuevo Turno</a></li>
+                        <li><a href="#" id="show_turns">Mostrar Turnos</a></li>
+                        <li><a href="#" id="close">Cerrar</a></li>
+                    </ul>
+                </nav>
             </div>
-            <br>
-            <div class="form group">
-                <input type="datetime-local" id="date" class="form-control" placeholder="fecha" required="required">
-            </div>
-            <br>
-            <div class="form group">
-                <button class="btn btn-success col-md-3 m-4" type="submit">Aceptar</button>
+        </header>
+        <main class="main-container">
+            <form class="p-4">
+                <div class="form group">
+                    <input type="text" id="name" class="form-control" placeholder="Nombre" autofocus required="required" pattern="[A-Za-z].{1,}" title="Solo pueden ingresarse letras y un mínimo de 8 carácteres">
+                </div>
+                <br>
+                <div class="form group">
+                    <input type="datetime-local" id="date" class="form-control" placeholder="fecha" required="required">
+                </div>
+                <br>
+                <div class="form group">
+                    <button class="btn btn-success col-md-3 m-4" type="submit">Aceptar</button>
 
-                <button class="btn btn-info col-md-3 m-4" type="reset">Limpiar Campos</button>
+                    <button class="btn btn-info col-md-3 m-4" type="reset">Limpiar Campos</button>
 
-                <button class="btn btn-danger col-md-3 m-4" id="cancel">Cancelar</button>
-            </div>
-            
-        </form>
-    </div>
-    <script src="../ui/new_turn.js"></script>
-</body>
+                    <button class="btn btn-danger col-md-3 m-4" id="cancel">Cancelar</button>
+                </div>
+                
+            </form>
+            <section class="info-content">
+                <span id="clock"></span>
+            </section>
+        </main>
+        <script src="../ui/new_turn.js"></script>
+        <script src="../ui/index.js"></script>
+    </body>
 </html>

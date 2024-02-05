@@ -9,3 +9,8 @@
   box-sizing: border-box;
   font-family: 'DM Serif Text', serif;
 }
+
+.navbar-list>li>a.active {
+  background-color: #FFA3D4;
+  color: black;
+}
