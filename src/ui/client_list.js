@@ -17,15 +17,22 @@ window.api.receive('clients:get', Clients => {
 function insertClient (client) {
   const clientTemplate = `                
                 <tr id='${client._id}'>
-                    <td class="col-5">
-                      <div class="text-overflow">${client.lastname}, ${client.name}</div>
-                    </td>
-                    <td class="col-2">${client.dni}</td>
-                    <td class="col-2">${client.phone}</td>
-                    <td class="col-3">
-                        <button id="view" onClick="viewClient('${client._id}')" class="btn btn-info">Ver</button>
-                        <button id="delete" onClick="deleteClient('${client._id}')" class="btn btn-danger">Eliminar</button>
-                    </td>
+                  <td class="col-content" scope="row">1</td>
+                  <td class="col-content">
+                    <div class="text-overflow">${client.lastname}, ${client.name}</div>
+                  </td>
+                  <td class="col-content">${client.dni}</td>
+                  <td class="col-content">${client.phone}</td>
+                  <td class="col-content">
+                      <div class="buttons-container">
+                        <a id="view" onClick="viewClient('${client._id}')" class="button-view">
+                          <img src="../../public/images/icon-user.png" alt="Icon user" class="img-button">
+                        </a>
+                        <a id="delete" onClick="deleteClient('${client._id}')" class="button-delete">
+                          <img src="../../public/images/icon-delete.png" alt="Icon user" class="img-button">
+                        </a>
+                      </div>
+                  </td>
                 </tr>
     `
   clients_list.insertAdjacentHTML('beforeend', clientTemplate)
