@@ -1,9 +1,4 @@
 const form = document.querySelector('form')
-const cancelBtn = document.querySelector('#cancel')
-
-cancelBtn.addEventListener('click', () => {
-  window.close()
-})
 
 form.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -31,6 +26,7 @@ form.addEventListener('submit', (event) => {
   if (newClient.phone === '') {
     newClient.phone = 'No tiene teléfono registrado'
   }
+  cleanForm()
 
   window.api.send('client:new', newClient)
   window.api.receive('new_client_created', (res) => {
@@ -40,3 +36,15 @@ form.addEventListener('submit', (event) => {
 
   })
 })
+
+function cleanForm () {
+  document.querySelector('#name').value = ''
+  document.querySelector('#lastname').value = ''
+  document.querySelector('#sex').value = ''
+  document.querySelector('#age').value = ''
+  document.querySelector('#dni').value = ''
+  document.querySelector('#address').value = ''
+  document.querySelector('#so').value = ''
+  document.querySelector('#carnet').value = ''
+  document.querySelector('#phone').value = ''
+}
