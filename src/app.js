@@ -1,8 +1,6 @@
 const { BrowserWindow, ipcMain, app } = require('electron')
 const path = require('path')
 
-let index
-
 // -----REINICIA LA APLICACION EN CADA CAMBIO PRODUCIDO EN EL CODIGO FUNCIONAL-----
 if (process.env.NODE_ENV !== 'production') {
   require('electron-reload')(__dirname, {
@@ -14,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
  * Crea una nueva ventana principal
  */
 function createIndexWindow () {
-  index = new BrowserWindow({
+  const index = new BrowserWindow({
     width: 1280,
     height: 720,
     resizable: false,
