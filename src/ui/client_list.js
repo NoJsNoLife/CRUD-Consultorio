@@ -17,7 +17,9 @@ window.api.receive('clients:get', Clients => {
 function insertClient (client) {
   const clientTemplate = `                
                 <tr id='${client._id}'>
-                    <td class="col-5">${client.name} ${client.lastname}</td>
+                    <td class="col-5">
+                      <div class="text-overflow">${client.lastname}, ${client.name}</div>
+                    </td>
                     <td class="col-2">${client.dni}</td>
                     <td class="col-2">${client.phone}</td>
                     <td class="col-3">

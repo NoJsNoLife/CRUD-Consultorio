@@ -1,8 +1,8 @@
 :root {  
-  --logo: #B3428A;
-  --menu: #FF69B4;
-  --menuHover: #FFA3D4;
-  --info: #D32C6D;
+  --logo: #7f4ca5;
+  --menu: #b57edc;
+  --menuHover: #dbb6ee;
+  --info: #4b1c71;
 }
 
 /**
@@ -61,12 +61,8 @@
   CONTENT --------------------------
 */
 .main-container {
-  background-color: white;
+  background-color: #fff0ff;
   color: black;
-  /* background-color: #FFA3D4; */
-  /* background-image: url("../../public/images/fondo.jpg");
-  background-size: cover;
-  background-position: center; */
   margin: 0;  
   display: flex;
   flex-direction: column;
@@ -84,7 +80,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 10px;
+  padding-right: 20px;
   border-top: 1px solid white;
 }
 
