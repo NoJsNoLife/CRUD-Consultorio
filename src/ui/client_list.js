@@ -17,13 +17,13 @@ window.api.receive('clients:get', Clients => {
 function insertClient (client) {
   const clientTemplate = `                
                 <tr id='${client._id}'>
-                  <td class="col-content" scope="row">1</td>
-                  <td class="col-content">
+                  <td class="col-content fs-5" scope="row">1</td>
+                  <td class="col-content fs-5">
                     <div class="text-overflow">${client.lastname}, ${client.name}</div>
                   </td>
-                  <td class="col-content">${client.dni}</td>
-                  <td class="col-content">${client.phone}</td>
-                  <td class="col-content">
+                  <td class="col-content fs-5">${client.dni}</td>
+                  <td class="col-content fs-5">${client.phone}</td>
+                  <td class="col-content fs-5">
                       <div class="buttons-container">
                         <a id="view" onClick="viewClient('${client._id}')" class="button-view">
                           <img src="../../public/images/icon-user.png" alt="Icon user" class="img-button">

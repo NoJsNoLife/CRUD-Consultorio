@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta from electron -->
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src data:; script-src 'self' 'unsafe-inline'" />
-    <meta http-equiv="X-Content-Security-Policy"
-        content="default-src 'self'; img-src data:; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
 
     <title>Consultorio-app</title>
     <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../public/css/normalize.css">
     <link rel="stylesheet" href="../../public/css/styles.css">
     <link rel="stylesheet" href="../../public/css/index.css">
+    <link rel="stylesheet" href="../../public/css/new_client.css">
 </head>
 
 <body class="index-container">
@@ -37,60 +36,91 @@
 
     <main class="main-container">
         <section class="main-content">
-            <h2 class="section-title">Nuevo Paciente</h2>
+            <h2 class="section-title">
+                Nuevo Paciente <img src="../../public/images/icon-user.png" alt="Icon user" class="icon-main-title">
+            </h2>
             <hr>
 
-            <form>
-                <div class="form group">
-                    <input type="text" id="name" class="form-control" placeholder="Nombre" autofocus required="required"
-                        pattern="[A-Za-z].{1,}" title="Solo pueden ingresarse letras y un mínimo de 8 carácteres">
-                </div>
-                <br>
-                <div class="form group">
-                    <input type="text" id="lastname" class="form-control" placeholder="Apellido" required="required"
-                        pattern="[A-Za-z].{1,}" title="Solo pueden ingresarse letras">
-                </div>
-                <br>
-                <select class="form-select" id="sex" aria-label="Default select example" required="required">
-                    <option selected value="">Sexo</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="masculino">Masculino</option>
-                </select>
-                <br>
-                <div class="form group">
-                    <input type="number" id="age" class="form-control" placeholder="Edad" required="required" min="0"
-                        title="El valor no puede ser menor a 0">
-                </div>
-                <br>
-                <div class="form group">
-                    <input type="text" id="dni" class="form-control" placeholder="DNI" required="required"
-                        pattern="[0-9].{7,12}" title="El DNI debe tener mínimo 7 dígitos">
-                </div>
-                <br>
-                <div class="form group">
-                    <input type="text" id="address" class="form-control" placeholder="Dirección">
-                </div>
-                <br>
-                <div class="form group">
-                    <input type="text" id="so" class="form-control" placeholder="Obra Social">
-                </div>
-                <br>
-                <div class="form group">
-                    <input type="text" id="carnet" class="form-control" placeholder="Número de Carnet" pattern=".{8,}"
-                        title="Debe tener mínimo 8 carácteres">
-                </div>
-                <br>
-                <div class="form group">
-                    <input type="text" id="phone" class="form-control" placeholder="Teléfono" pattern="[0-9].{6,12}"
-                        title="Debe ingresar sólo números, un mínimo de 6 digitos y un máximo de 12">
-                </div>
-                <br>
-                <div class="form group">
-                    <button class="btn btn-success col-md-3 m-4" type="submit">Aceptar</button>
+            <p class="opacity-75">Campos obligatorios (*)</p>
 
-                    <button class="btn btn-info col-md-3 m-4" type="reset">Limpiar Campos</button>
-                </div>
+            <form action="#" class="form-paciente">
+                <h5 class="form-title">FORMULARIO DE REGISTRO</h5>
 
+                <div class="form-inputs">
+                    <div class="row pb-4">
+                        <div class="col-6">
+                            <input type="text" id="name" class="form-control" placeholder="Nombre *" autofocus required
+                                pattern="[A-Za-z].{1,}"
+                                title="Solo pueden ingresarse letras y un mínimo de 8 carácteres">
+                        </div>
+
+                        <div class="col-6">
+                            <input type="text" id="lastname" class="form-control" placeholder="Apellido *" required
+                                pattern="[A-Za-z].{1,}"
+                                title="Solo pueden ingresarse letras y un mínimo de 8 carácteres">
+                        </div>
+                    </div>
+
+                    <div class="row pb-4">
+                        <div class="col-6">
+                            <select class="form-select" id="gender" required>
+                                <option selected>Genero</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="masculino">masculino</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="col-6">
+                            <input type="number" id="age" class="form-control" placeholder="Edad" required min="0"
+                                title="El valor no puede ser menor a 0">
+                        </div>
+                    </div>
+
+                    <div class="row pb-4">
+                        <div class="col-6">
+                            <input type="text" id="dni" class="form-control" placeholder="Numero de DNI *" required
+                                pattern="[0-9].{7,12}" title="El DNI debe tener mínimo 7 dígitos">
+                        </div>
+
+                        <div class="col-6">
+                            <input type="text" id="address" class="form-control" placeholder="Dirección">
+                        </div>
+                    </div>
+
+                    <div class="row pb-4">
+                        <div class="col-6">
+                            <input type="text" id="so" class="form-control" placeholder="Obra social*">
+                        </div>
+
+                        <div class="col-6">
+                            <input type="text" id="carnet" class="form-control" placeholder="Número de carnet*"
+                                pattern=".{8,}" title="Debe tener mínimo 8 carácteres">
+                        </div>
+                    </div>
+
+                    <div class="row pb-4">
+                        <div class="col-6">
+                            <input type="text" id="phone" class="form-control" placeholder="Teléfono"
+                                pattern="[0-9].{6,12}"
+                                title="Debe ingresar sólo números, un mínimo de 6 digitos y un máximo de 12">
+                        </div>
+
+                        <div class="col-6">
+                            <input type="email" id="email" class="form-control" placeholder="Correo electronico">
+                        </div>
+                    </div>
+
+                    <div class="buttons-form py-2 text-end">
+                        <button class="button-form-clear" type="reset">
+                            <img src="../../public/images/icon-clear.png" alt="Icon clear" class="icon-form-clear">
+                        </button>
+
+                        <button class="button-form-register" type="submit">
+                            Registrar
+                        </button>
+                    </div>
+                </div>
             </form>
         </section>
 
@@ -98,6 +128,7 @@
             <span id="clock"></span>
         </section>
     </main>
+
     <script src="../ui/new_client.js"></script>
     <script src="../ui/index.js"></script>
 </body>

@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta from electron -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
 
     <title>Consultorio-app</title>
     <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -36,7 +36,9 @@
 
     <main class="main-container">
         <section class="main-content">
-            <h2 class="section-title">Pacientes</h2>
+            <h2 class="section-title">
+                Pacientes <img src="../../public/images/icon-list.png" alt="Icon user" class="icon-main-title">
+            </h2>
             <hr>
 
             <div class="list-options">
@@ -48,8 +50,8 @@
                     <label class="search-container" for="id-search">
                         <img src="../../public/images/icon-search.png" alt="Icon search" class="img-search">
                     </label>
-                    <input type="text" class="form-control input-search" id="id-search" placeholder="Buscar nombre..."
-                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control input-search" id="id-search"
+                        placeholder="Buscar por apellido..." aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
 

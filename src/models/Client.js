@@ -11,7 +11,7 @@ const newClientSchema = new Schema({
     type: String,
     required: true
   },
-  sex: {
+  gender: {
     type: String,
     required: true
   },
@@ -36,6 +36,10 @@ const newClientSchema = new Schema({
     required: null
   },
   phone: {
+    type: String,
+    required: null
+  },
+  email: {
     type: String,
     required: null
   },

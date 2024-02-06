@@ -1,0 +1,96 @@
+/**
+  FORM ---------------------
+*/
+.form-paciente,
+.form-title {
+  border-radius: 0.375rem;
+}
+
+.form-paciente {
+  margin: auto;
+  border: 1px solid #dbb6ee;
+  padding: 10px;
+  margin-top: 30px;
+  background-color: white;
+  position: relative;
+}
+
+.form-title {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  background-color: #7f4ca5;
+  color: white;
+  padding: 7.5px;
+  font-weight: bold;
+}
+
+.form-inputs {
+  padding-top: 35px;
+}
+
+/**
+  BUTTONS FORM ---------------------
+*/
+.buttons-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button-form-clear,
+.button-form-register { 
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.375rem;
+}
+
+.button-form-clear {
+  width: 40px;
+  height: 40px;
+}
+
+.button-form-clear:hover {
+  background-color: rgba(100, 100, 100, 0.25);
+  color: white;
+}
+
+.button-form-clear:hover .icon-form-clear{
+  animation: rotar 0.5s linear infinite;
+}
+
+@keyframes rotar {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+.button-form-register {
+  background-color: #7f4ca5;
+  color: white;
+  height: 40px;
+  padding: 0 40px;
+  margin-left: 10px;
+  font-size: 20px;  
+}
+
+.button-form-register:hover {
+  background-color: #6baec8;
+}
+
+.icon-form-clear {
+  transform: rotateZ(-20deg);
+}
+
+.icon-form-clear,
+.icon-form-register {
+  width: 25px;
+}
