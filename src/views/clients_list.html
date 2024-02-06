@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta from electron -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
 
     <title>Consultorio-app</title>
     <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -36,17 +36,22 @@
 
     <main class="main-container">
         <section class="main-content">
-            <h2 class="section-title">Pacientes</h2>
+            <h2 class="section-title">
+                Pacientes <img src="../../public/images/icon-list.png" alt="Icon user" class="icon-main-title">
+            </h2>
             <hr>
 
             <div class="list-options">
-                <a class="btn-reload" id="reload">
+                <a class="input-group-text btn-reload" id="reload">
                     <img src="../../public/images/icon-reload.png" alt="Icon reload" class="img-reload">
                 </a>
 
-                <div class="input-group input-paciente">
-                    <input type="text" class="form-control" placeholder="Buscar Paciente" aria-label="Username"
-                        aria-describedby="basic-addon1">
+                <div class="input-paciente">
+                    <label class="search-container" for="id-search">
+                        <img src="../../public/images/icon-search.png" alt="Icon search" class="img-search">
+                    </label>
+                    <input type="text" class="form-control input-search" id="id-search"
+                        placeholder="Buscar por apellido..." aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
 
@@ -54,6 +59,7 @@
                 <table class="table table-hover table-striped text-center">
                     <thead class="table-head">
                         <tr class="text-uppercase">
+                            <th scope="col" class="col-1">#</th>
                             <th scope="col" class="col-5">Nombre</th>
                             <th scope="col" class="col-2">Dni</th>
                             <th scope="col" class="col-2">Teléfono</th>
@@ -76,39 +82,3 @@
 </body>
 
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Pacientes</title>
-    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-</head>
-<body>
-    <div class="container p-4">
-        <br>
-            <h1>Lista de Pacientes</h1>
-        <br>
-        <section>  
-            <div class="row justify-content-around">
-                <button class="btn btn-success col-md-2 m-4" id="new">Crear Pacientes</button>
-                <button class="btn btn-secondary col-md-2 m-4"  id="reload">Actualizar</button>
-                <button class="btn btn-primary col-md-2 m-4" id="search">Buscar Paciente</button>
-                <button class="btn btn-secondary col-md-2 m-4" id="back">Volver</button>
-                <table id="clients_list" class="table table-striped table-hover table-responsive">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Dni</th>
-                        <th>Teléfono</th>
-                        <th>Opciones</th>   
-                    </tr>
-                </table>
-            </div>
-        </section>
-    </div>
-    
-    <script src="../ui/client_list.js"></script>
-</body>
-</html> -->

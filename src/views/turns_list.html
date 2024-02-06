@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Meta from electron -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
-    
-        <title>Consultorio-app</title>
-        <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../../public/css/normalize.css">
-        <link rel="stylesheet" href="../../public/css/styles.css">
-        <link rel="stylesheet" href="../../public/css/index.css">
-    </head>
-    
-    <body class="index-container">
-        <header class="navbar-container">
-            <div class="navbar-wrapper">
-                <h1 class="main-title">CONSULTORIO</h1>
-    
-                <nav class="main-navbar">
-                    <ul class="navbar-list">
-                        <li><a href="#" id="new_client">Nuevo Paciente</a></li>
-                        <li><a href="#" id="show_clients">Mostrar Pacientes</a></li>
-                        <li><a href="#" id="new_turn">Nuevo Turno</a></li>
-                        <li><a href="#" id="show_turns" class="active">Mostrar Turnos</a></li>
-                        <li><a href="#" id="close">Cerrar</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main class="main-container">
-            <h2 class="section-title">Agenda de Turnos</h2>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta from electron -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https; script-src 'self' 'unsafe-inline'" />
+
+    <title>Consultorio-app</title>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../public/css/normalize.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="stylesheet" href="../../public/css/index.css">
+</head>
+
+<body class="index-container">
+    <header class="navbar-container">
+        <div class="navbar-wrapper">
+            <h1 class="main-title">CONSULTORIO</h1>
+
+            <nav class="main-navbar">
+                <ul class="navbar-list">
+                    <li><a href="#" id="new_client">Nuevo Paciente</a></li>
+                    <li><a href="#" id="show_clients">Mostrar Pacientes</a></li>
+                    <li><a href="#" id="new_turn">Nuevo Turno</a></li>
+                    <li><a href="#" id="show_turns" class="active">Mostrar Turnos</a></li>
+                    <li><a href="#" id="close">Cerrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">      
+        <section class="main-content">
+            <h2 class="section-title">
+                Turnos <img src="../../public/images/icon-list.png" alt="Icon user" class="icon-main-title">
+            </h2>
             <hr>
 
-            <section>  
-                <div class="row justify-content-around">
-                    <button class="btn btn-success col m-4" id="new">Nuevo Turno</button>
-                    <button class="btn btn-secondary col m-4"  id="reload">Actualizar</button>
-                    <button class="btn btn-dark col m-4" id="back">Volver</button>
-                    <table id="turns_list" class="table table-hover table-responsive">
-                    </table>
-                </div>
-            </section>
-            <section class="info-content">
-                <span id="clock"></span>
-            </section>
-        </main>
-        <script src="../ui/turns_list.js"></script>
-        <script src="../ui/index.js"></script>
-    </body>
+
+        </section>
+
+        <section class="info-content">
+            <span id="clock"></span>
+        </section>
+    </main>
+    <script src="../ui/turns_list.js"></script>
+    <script src="../ui/index.js"></script>
+</body>
+
 </html>

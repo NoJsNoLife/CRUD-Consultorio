@@ -1,14 +1,14 @@
 const { BrowserWindow, ipcMain, Notification } = require('electron')
 const Client = require('../models/Client')
 
-// -----CLIENT IPC-----
-
 ipcMain.on('client:page', (event, args) => {
   BrowserWindow.getFocusedWindow().loadFile('src/views/new_client.html')
 })
+
 ipcMain.on('clients:list', (event, args) => {
   BrowserWindow.getFocusedWindow().loadFile('src/views/clients_list.html')
 })
+
 ipcMain.on('client:new', async (event, args) => {
   try {
     const newClient = new Client(args)
@@ -27,6 +27,7 @@ ipcMain.on('client:new', async (event, args) => {
     )
   }
 })
+
 ipcMain.on('client:delete', async (event, args) => {
   try {
     await Client.findByIdAndDelete(args)
@@ -44,6 +45,7 @@ ipcMain.on('client:delete', async (event, args) => {
     )
   }
 })
+
 ipcMain.on('clients:get', async (event, args) => {
   const clients = await Client.find()
   event.reply('clients:get', JSON.stringify(clients))
