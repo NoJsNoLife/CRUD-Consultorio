@@ -6,18 +6,20 @@ const reloadBtn = document.querySelector('#reload')
 window.api.send('clients:get')
 window.api.receive('clients:get', Clients => {
   const clients = JSON.parse(Clients)
+  let incremental = 1
   if (clients.length === 0) {
     return emptyList()
   }
   clients.forEach(client => {
-    insertClient(client)
+    insertClient(client, incremental)
+    incremental++
   })
 })
 
-function insertClient (client) {
+function insertClient (client, incremental) {
   const clientTemplate = `                
-                <tr id='${client._id}'>
-                  <td class="col-content fs-5" scope="row">1</td>
+                <tr>
+                  <td class="col-content fs-5" scope="row">${incremental}</td>
                   <td class="col-content fs-5">
                     <div class="text-overflow">${client.lastname}, ${client.name}</div>
                   </td>
@@ -46,8 +48,7 @@ reloadBtn.addEventListener('click', () => {
 function deleteClient (clientId) {
   window.api.send('client:delete', clientId)
   window.api.receive('delete_client_success', res => {
-    const deletedClient = document.getElementById(clientId)
-    deletedClient.style.display = 'none'
+    window.location.reload()
   })
   window.api.receive('delete_client_error', res => {
 
@@ -60,5 +61,12 @@ function emptyList () {
         <p>No hay clientes registrados</p>
     </div>
     `
-  clients_table.insertAdjacentHTML('beforeend', emptyTemplate)
+  clients_table.insertAdjacentHTML('afterend', emptyTemplate)
+}
+
+// eslint-disable-next-line no-unused-vars
+function calculateAge (birth) {
+  const fechaDeNacimiento = new Date(birth)
+  const hoy = new Date()
+  console.log(parseInt((hoy - fechaDeNacimiento) / (1000 * 60 * 60 * 24 * 365)))
 }

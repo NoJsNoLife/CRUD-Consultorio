@@ -13,10 +13,10 @@ const newClientSchema = new Schema({
   },
   gender: {
     type: String,
-    required: true
+    required: null
   },
-  age: {
-    type: Number,
+  birth: {
+    type: Date,
     required: true
   },
   dni: {
