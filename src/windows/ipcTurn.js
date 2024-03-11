@@ -36,7 +36,7 @@ ipcMain.on('turn:delete', async (event, args) => {
     }).show()
     )
   } catch (e) {
-    console.log(e)
+    console.error(e)
     event.reply('delete_turn_error', new Notification({
       title: 'ERROR',
       body: 'Hubo un error inesperado en proceso de eliminación'
