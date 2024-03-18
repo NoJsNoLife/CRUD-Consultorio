@@ -12,8 +12,8 @@
     <title>Consultorio-app</title>
     <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../public/css/normalize.css">
-    <link rel="stylesheet" href="../../public/css/calendar.css">
     <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="stylesheet" href="../../public/css/dayView.css">
     <link rel="stylesheet" href="../../public/css/index.css">
 </head>
 
@@ -33,43 +33,32 @@
             </nav>
         </div>
     </header>
-
-    <main class="main-container">      
+    <main class="main-container">
         <section class="main-content">
-            <h2 class="section-title">
-                Turnos <img src="../../public/images/icon-list.png" alt="Icon user" class="icon-main-title">
-            </h2>
-            <hr>
-
-            <div class="wrapper">
-                <header>
-                  <p class="current-date"></p>
-                  <div class="icons">
-                    <img id="prev" src="../../public/images/left.svg"/>
-                    <img id="next" src="../../public/images/right.svg"/>
-                  </div>
-                </header>
-                <div class="calendar">
-                  <ul class="weeks">
-                    <li>Domingo</li>
-                    <li>Lunes</li>
-                    <li>Martes</li>
-                    <li>Miercoles</li>
-                    <li>Jueves</li>
-                    <li>Viernes</li>
-                    <li>Sabado</li>
-                  </ul>
-                  <ul class="days"></ul>
+            <header>
+                <div class="icons">
+                    <img id="back" src="../../public/images/left.svg"/>
                 </div>
-              </div>
+            </header>
+            <article class="table-scroll" id="clients-table">
+                <table class="table table-hover table-striped text-center">
+                    <thead id="thead" class="table-head">
+                        <tr class="text-uppercase">
+                            <th scope="col" class="col-4">Horario</th>
+                            <th scope="col" class="col-4">Paciente</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </article>
         </section>
-
         <section class="info-content">
             <span id="clock"></span>
         </section>
     </main>
-    <script src="../ui/turns_list.js"></script>
     <script src="../ui/index.js"></script>
+    <script src="../ui/dayView.js"></script>
 </body>
 
 </html>

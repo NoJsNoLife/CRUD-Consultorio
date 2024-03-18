@@ -10,16 +10,16 @@ let date = new Date()
 let currYear = date.getFullYear()
 let currMonth = date.getMonth()
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
-  'August', 'September', 'October', 'November', 'December']
+const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+  'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
-window.api.send('turns:get')
-window.api.receive('turns:get', Turns => {
-  const turns = JSON.parse(Turns)
-  turns.forEach(turn => {
-    console.log(turn.name)
-  })
-})
+// eslint-disable-next-line no-unused-vars
+const viewDay = (day) => {
+  window.api.send('day:get', { day, currYear, currMonth })
+  /*window.api.receive('day:get', (turns) => {
+    console.log(turns)
+  })*/
+}
 
 /*newBtn.addEventListener('click', () => {
   window.api.send('turn:page')
@@ -43,7 +43,8 @@ const renderCalendar = () => {
                      currYear === new Date().getFullYear()
       ? 'active'
       : ''
-    liTag += `<li class="${isToday}"><button>${i}</button></li>`
+    liTag += `<li class="${isToday}"><button onclick="viewDay(${i})">${i}</button></li>`
+    //liTag += `<li class="${isToday}">${i}${dayTemplate}</li>`
   }
   for (let i = lastDayofMonth; i < 6; i++) { // creando li de los primeros dias del siguiente mes
     liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
